@@ -8,6 +8,7 @@ A modern, customizable resume builder application built with Next.js and TypeScr
 
 https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
 
+![image](https://github.com/user-attachments/assets/a12afad7-9052-4a02-9202-010e2dea49b9)
 
 
 ## Features
