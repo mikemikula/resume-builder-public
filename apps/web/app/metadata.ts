@@ -6,14 +6,14 @@ export const metadata = {
   title: `${personal.name} - ${personal.description}`,
   description: summary.text,
   keywords: [
-    'Software Engineer',
-    'Full Stack Developer',
-    'Technical Leader',
-    'Solution Architect',
-    'DevOps Engineer',
+    'Software Architecture',
+    'Full Stack Development',
+    'Technical Leadership',
     'Cloud Architecture',
-    'AI Integration',
-    'Technical Leadership'
+    'DevOps Engineering',
+    'System Design',
+    'AI/ML Integration',
+    'Enterprise Solutions'
   ],
   authors: [{ name: personal.name }],
   creator: personal.name,

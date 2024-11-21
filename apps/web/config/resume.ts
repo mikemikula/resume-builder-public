@@ -151,8 +151,8 @@ export const resumeConfig: ResumeConfig = {
         category: 'DevOps',
         items: [
           { name: 'CI/CD Pipelines', level: 4 },
-          { name: 'CircleCI', level: 3 },
-          { name: 'GitHub / Actions / Git', level: 3 }
+          { name: 'Cloud Infrastructure', level: 3 },
+          { name: 'Version Control Systems', level: 3 }
         ]
       }
     ],
@@ -211,40 +211,56 @@ export const resumeConfig: ResumeConfig = {
         year: '2021',
         label: 'Enterprise Platform Scaling for IPO',
         description: 'Led technical infrastructure scaling',
-        url: '#',
+        url: 'https://example.com/ipo-success',
         icon: 'rocket'
       },
       {
         type: 'acquisition',
         year: '2020',
-        label: 'Successful Startup Exit',
+        label: 'Startup Acquisition Success',
         description: 'Scaled to 1M+ users before acquisition',
-        url: '#',
+        url: 'https://example.com/acquisition',
         icon: 'money'
+      },
+      {
+        type: 'business',
+        year: '2015',
+        label: 'Digital Platform Success',
+        description: 'Achieved significant monthly revenue',
+        url: 'https://example.com/platform',
+        icon: 'dollar'
+      },
+      {
+        type: 'education',
+        year: '2009',
+        label: 'Educational Technology Platform',
+        description: 'Serving 10,000+ students',
+        url: 'https://example.com/edtech',
+        icon: 'academic'
       }
     ]
   },
 
   contact: {
-    email: 'your.email@example.com',
+    email: 'contact@example.com',
     links: [
       {
         type: 'email',
-        url: 'mailto:your.email@example.com',
-        label: 'your.email@example.com',
+        url: 'mailto:contact@example.com',
+        label: 'contact@example.com',
         description: 'Email me directly',
         icon: 'email'
       },
       {
         type: 'linkedin',
-        url: 'https://linkedin.com/in/yourprofile',
+        url: 'https://linkedin.com/in/example',
         label: 'LinkedIn Profile',
         description: '35+ Recommendations',
         icon: 'linkedin'
       },
       {
         type: 'github',
-        url: 'https://github.com/yourusername',
+        url: 'https://github.com/example',
         label: 'GitHub Profile',
         description: 'View my code contributions',
         icon: 'github'

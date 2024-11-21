@@ -35,45 +35,46 @@ export default function PrivacyPolicy() {
         <h1 className="text-3xl font-bold text-text-primary mb-8">Privacy Policy</h1>
         
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-text-primary">Data Collection</h2>
-          <p>This website uses Google Analytics to understand visitor behavior. The following data may be collected:</p>
+          <h2 className="text-xl font-semibold text-text-primary">Information Collection</h2>
+          <p>This website collects analytics data to improve user experience. The following information may be collected:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Pages visited and time spent</li>
-            <li>Referring websites</li>
-            <li>Approximate geographic location</li>
-            <li>Device and browser information</li>
+            <li>Page navigation patterns</li>
+            <li>Source of website visits</li>
+            <li>General location data</li>
+            <li>Technical specifications</li>
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-text-primary">Cookie Usage</h2>
-          <p>We use cookies to:</p>
+          <h2 className="text-xl font-semibold text-text-primary">Use of Cookies</h2>
+          <p>Cookies are utilized for:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Remember your cookie preferences</li>
-            <li>Analyze site traffic and user behavior</li>
-            <li>Improve site performance</li>
+            <li>Storing user preferences</li>
+            <li>Understanding visitor patterns</li>
+            <li>Optimizing website functionality</li>
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-text-primary">Your Rights</h2>
-          <p>You have the right to:</p>
+          <h2 className="text-xl font-semibold text-text-primary">User Rights</h2>
+          <p>Visitors have the right to:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Opt-out of analytics tracking</li>
-            <li>Request deletion of your data</li>
-            <li>Access your collected data</li>
+            <li>Disable analytics collection</li>
+            <li>Request data removal</li>
+            <li>Access collected information</li>
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-text-primary">Contact</h2>
-          <p>For privacy-related inquiries, please contact:</p>
+          <h2 className="text-xl font-semibold text-text-primary">Contact Information</h2>
+          <p>For privacy-related questions, please contact:</p>
           <p>Email: {SITE_CONFIG.email}</p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-text-primary">Updates</h2>
+          <h2 className="text-xl font-semibold text-text-primary">Policy Updates</h2>
           <p>This privacy policy was last updated on {new Date().toLocaleDateString()}.</p>
+          <p>We reserve the right to update this policy as needed to comply with relevant regulations.</p>
         </section>
       </motion.div>
     </div>

@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
-  name: '[Your Name]',
-  title: 'Software Engineer',
+  name: '[Your Full Name]',
+  title: 'Lead Software Engineer & Technical Architect',
   email: 'your.email@example.com',
   linkedin: 'linkedin.com/in/yourprofile',
 }
@@ -8,38 +8,40 @@ export const SITE_CONFIG = {
 export const JOBS = [
   {
     title: "Technical Advisor",
-    company: "Example Company",
+    company: "Technology Solutions Inc.",
     period: "March 2022 - Present",
     achievements: [
-      "Provide feedback on technical architecture of the cloud platform and architecture",
-      "Advise teams on how to fail fast in the startup space along with leading the principles of build, measure and learn"
+      "Provide technical architecture guidance for enterprise cloud platforms",
+      "Lead implementation of agile methodologies and development practices"
     ]
-  },
-  // Add all other jobs...
+  }
 ]
 
 export const SKILLS = {
   current: {
-    "AI/ML": ["Generative AI", "ChatGPT", "Claude", "Prompt Engineering", "Cursor"],
-    "Programming": ["JavaScript", "TypeScript"],
-    "Frameworks": ["React", "Next.js"],
-    "Platforms": ["Cloud Platforms"]
+    "AI/ML": ["Generative AI", "Large Language Models", "Prompt Engineering", "AI Development"],
+    "Programming": ["TypeScript", "Python", "JavaScript"],
+    "Frameworks": ["React", "Next.js", "Node.js"],
+    "Platforms": ["Cloud Architecture"]
   },
   previous: {
     "Programming": ["Java", "C#", "HTML5", "CSS3", "SQL"],
-    "Frameworks": ["React", "Vue.js", "Angular", "Spring Framework"],
+    "Frameworks": ["Vue.js", "Angular", "Spring"],
     "Platforms": ["Node.js", "Ruby on Rails"],
-    "DevOps": ["CircleCI", "GitHub", "Git"],
-    "Tools": ["Visual Studio Code", "Google Analytics", "Photoshop CC", "3ds max"]
+    "DevOps": ["CI/CD", "Version Control", "Cloud Services"],
+    "Tools": ["Development Tools", "Analytics Platforms", "Design Software"]
   }
 }
 
 export const ACHIEVEMENTS = [
   {
-    year: "2021",
-    title: "Scaled enterprise platform to support company IPO"
+    year: "2023",
+    title: "Led enterprise platform architecture transformation"
   },
-  // Add all other achievements...
+  {
+    year: "2022",
+    title: "Implemented successful cloud migration strategy"
+  }
 ]
 
 export const SECTIONS = [

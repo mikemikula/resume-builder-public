@@ -21,37 +21,37 @@ type RootLayoutProps = {
 
 export const metadata: Metadata = {
   metadataBase: getDomainUrl(),
-  title: "Your Name | Your Title",
-  description: "Your description here.",
+  title: "Professional Resume | Software Engineer",
+  description: "Lead Software Engineer and Technical Architect with expertise in cloud architecture, full-stack development, and technical leadership.",
   keywords: [
-    'Keyword1',
-    'Keyword2',
-    'Keyword3',
-    'Keyword4',
-    'Keyword5',
-    'Keyword6',
-    'Keyword7',
-    'Keyword8'
+    'Software Engineering Resume',
+    'Technical Leadership',
+    'Cloud Architecture',
+    'Full Stack Development',
+    'DevOps Engineering',
+    'System Architecture',
+    'Engineering Management',
+    'Technical Strategy'
   ],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Resume Owner" }],
   openGraph: {
     type: 'profile',
-    title: 'Your Name - Your Title',
-    description: "Your description here.",
+    title: 'Software Engineering Resume',
+    description: "Professional resume showcasing software engineering and technical leadership experience.",
     images: [{
       url: createUrl('/previews/linkedin-preview.png'),
       width: 1200,
       height: 627,
-      alt: 'Your Name - Your Title'
+      alt: 'Professional Resume Preview'
     }],
-    siteName: "Your Site Name",
+    siteName: "Professional Resume",
     locale: 'en_US',
     url: getDomainString(),
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name - Your Title',
-    description: "Your description here.",
+    title: 'Software Engineering Resume',
+    description: "Professional software engineering resume highlighting technical expertise and leadership.",
     images: [createUrl('/previews/linkedin-preview.png')],
   },
   robots: {
