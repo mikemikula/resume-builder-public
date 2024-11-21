@@ -1,102 +1,270 @@
-# Recipe Management App
+# Resume Builder App
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It is designed to manage recipes efficiently using a modern web stack.
+A modern, customizable resume builder application built with Next.js and TypeScript. Create, edit, and share your professional resume with a beautiful, responsive design.
 
-## Project Stack
+![Resume Builder Preview](./docs/preview.png)
 
-- **Frontend**: Next.js with Tailwind CSS for styling and Formik/Yup for form management.
-- **Backend**: Node.js with Express framework, using Prisma ORM to interact with a PostgreSQL database.
-- **Search**: PostgreSQL Full-Text Search with GIN index.
-- **Infrastructure**: Deployed on AWS Amplify for both frontend and backend, with Cloudflare as CDN.
-- **DevOps**: Managed with Turborepo, GitHub Actions for CI/CD, and Docker for containerization.
-- **Open Graph Image Generation**: Utilizes Vercel OG for dynamic Open Graph image generation, enhancing social media sharing with custom images.
+## Features
 
-## Getting Started
+- 🎨 Modern, responsive design with dark/light mode
+- 📱 Mobile-friendly interface
+- 🖨️ Print-optimized layout
+- 📊 Google Analytics integration
+- 🔍 SEO optimized with meta tags
+- 📷 Dynamic Open Graph image generation
+- 🚀 Fast page loads with Next.js
+- 🎯 TypeScript for type safety
+- 📦 Monorepo structure with Turborepo
 
-### Prerequisites
+## Project Structure
 
-Ensure you have the following installed:
-
-- Node.js
-- npm or pnpm
-- Docker (for containerization)
-- AWS CLI (for deployment)
-
-### Development
-
-First, run the development server:
-
-```bash
-pnpm dev
+```
+├── apps
+│   └── web                    # Next.js frontend application
+│       ├── app               # Next.js 13+ app directory
+│       ├── components        # React components
+│       ├── config           # Configuration files
+│       ├── lib              # Utility functions
+│       └── types            # TypeScript type definitions
+└── packages                  # Shared packages
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Development Environment Setup
 
-### Building the Project
-
-To build the project for production, run:
-
-```bash
-pnpm build
-```
-
-This will create an optimized build in the `.next` directory.
-
-### Making Updates
-
-To update dependencies or make changes to the project, ensure you are in the root directory and use:
-
-```bash
-pnpm update
-```
-
-For code changes, follow the established coding standards and ensure all tests pass before committing.
-
-### Running on AWS Amplify
-
-To deploy the backend on AWS, follow these steps:
-
-1. **Build the Docker Image**:
-
+1. **Clone and Install**:
    ```bash
-   docker build -t my-backend-app .
+   pnpm install
+   pnpm build
    ```
-
-2. **Push to AWS ECR**:
-
-   - Tag the image:
-     ```bash
-     docker tag my-backend-app:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/my-backend-app:latest
-     ```
-   - Push the image:
-     ```bash
-     docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/my-backend-app:latest
-     ```
-
-3. **Deploy with AWS CLI**:
-   ```bash
-   aws deploy create-deployment --application-name myBackendApp --deployment-group-name myDeploymentGroup --revision revisionType=S3,s3Location={bucket=mybucket,key=myapp.zip}
-   ```
-
-## Google Analytics Configuration
-
-To configure Google Analytics with this app, follow these steps:
-
-1. **Set Up Google Analytics Account**:
-   - Create a Google Analytics account if you haven't already.
-   - Set up a new property and obtain your `GA_MEASUREMENT_ID`.
 
 2. **Environment Variables**:
-   - Create a `.env` file in the root of your project.
-   - Add the following line to your `.env` file:
-     ```plaintext
-     NEXT_PUBLIC_GA_MEASUREMENT_ID=your-ga-measurement-id
-     ```
-   - Ensure this ID is available to the `Analytics` and `RootLayout` components.
+   Create a `.env` file in the root directory:
+   ```env
+   # Required
+   NEXT_PUBLIC_DOMAIN=http://localhost:3000
 
-3. **Tracked Events**:
+   # Optional
+   NEXT_PUBLIC_GA_MEASUREMENT_ID=your-ga-id
+   
+   # Optional
+   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-verification-code
+   ```
+
+3. **Start Development Server**:
+   ```bash
+   pnpm dev
+   ```
+
+### Customization
+
+1. **Personal Information**:
+   Edit `apps/web/lib/constants.ts`:
+   ```typescript
+   export const SITE_CONFIG = {
+     name: 'Your Name',
+     title: 'Your Title',
+     email: 'your.email@example.com',
+     linkedin: 'your-linkedin-profile'
+   }
+   ```
+
+2. **Resume Sections**:
+   - Experience: `apps/web/config/resume.ts`
+   - Skills: Update the `SKILLS` object
+   - Achievements: Modify the `ACHIEVEMENTS` array
+
+3. **Styling**:
+   - Theme: `apps/web/styles/theme.ts`
+   - Tailwind: `tailwind.config.js`
+
+### Building for Production
+
+1. **Build**:
+   ```bash
+   pnpm build
+   ```
+
+2. **Test Production Build**:
+   ```bash
+   pnpm start
+   ```
+
+### Deployment
+
+#### AWS Amplify
+Follow the AWS deployment steps in the AWS section above.
+
+
+### Analytics Implementation
+
+The app uses Google Analytics 4 with custom event tracking:
+```typescript
+// Example event tracking
+const trackEvent = {
+  action: 'page_view',
+  category: 'engagement',
+  label: 'resume_view'
+}
+```
+
+## Performance Optimization
+
+- Implements image optimization
+- Uses Next.js static generation
+- Employs proper code splitting
+- Optimizes fonts with `next/font`
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the established code style
+- Add proper TypeScript types
+- Write tests for new features
+- Update documentation as needed
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. **Build Errors**:
+   ```bash
+   # Clear cache and reinstall dependencies
+   pnpm clean
+   pnpm install
+   ```
+
+2. **Type Errors**:
+   - Ensure TypeScript version matches project requirements
+   - Run `pnpm type-check` to verify types
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Next.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
+- The open-source community for inspiration and tools
+
+## Support
+
+For support, email support@example.com or open an issue in the repository.
+
+## Detailed Setup Guides
+
+### AWS Amplify Deployment Guide
+
+1. **Prerequisites**:
+   - AWS Account
+   - AWS CLI installed and configured
+   - Amplify CLI installed (`npm install -g @aws-amplify/cli`)
+
+2. **Initialize Amplify**:
+   ```bash
+   amplify init
+   ```
+
+3. **Configure Build Settings**:
+   Create `amplify.yml` in the root directory:
+   ```yaml
+   version: 1
+   frontend:
+     phases:
+       preBuild:
+         commands:
+           - npm install -g pnpm
+           - pnpm install
+       build:
+         commands:
+           - pnpm build
+     artifacts:
+       baseDirectory: apps/web/.next
+       files:
+         - '**/*'
+     cache:
+       paths:
+         - node_modules/**/*
+   ```
+
+4. **Deploy**:
+   ```bash
+   amplify push
+   ```
+
+### Google Analytics Implementation
+
+1. **Setup Analytics Component**:
+   Create `components/Analytics.tsx`:
+   ```typescript
+   'use client'
+   
+   import { useEffect } from 'react'
+   import { pageview } from '@/lib/gtag'
+   import { usePathname, useSearchParams } from 'next/navigation'
+   
+   export default function Analytics() {
+     const pathname = usePathname()
+     const searchParams = useSearchParams()
+   
+     useEffect(() => {
+       const url = pathname + searchParams.toString()
+       pageview(url)
+     }, [pathname, searchParams])
+   
+     return null
+   }
+   ```
+
+2. **Configure Event Tracking**:
+   Create `lib/gtag.ts`:
+   ```typescript
+   export const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+   
+   type GTagEvent = {
+     action: string
+     category: string
+     label: string
+     value?: number
+   }
+   
+   export const pageview = (url: string) => {
+     window.gtag('config', GA_ID!, {
+       page_path: url,
+     })
+   }
+   
+   export const event = ({ action, category, label, value }: GTagEvent) => {
+     window.gtag('event', action, {
+       event_category: category,
+       event_label: label,
+       value: value,
+     })
+   }
+   ```
+
+3. **Track Custom Events**:
+   ```typescript
+   // Example usage in components
+   import { event } from '@/lib/gtag'
+   
+   event({
+     action: 'share_resume',
+     category: 'engagement',
+     label: 'share_button_click',
+   })
+   ```
+
+4. **ConfigureTracked Events**:
    - The application tracks the following events:
 
      - **Page Views**:
@@ -156,23 +324,136 @@ To configure Google Analytics with this app, follow these steps:
          - `referrer`: Referring URL
          - `landing_page`: Landing page path
 
-4. **Example .env Configuration**:
-   ```plaintext
-   NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+### Performance Optimization Details
+
+1. **Image Optimization**:
+   ```typescript
+   // Use Next.js Image component
+   import Image from 'next/image'
+   
+   <Image
+     src="/profile.jpg"
+     alt="Profile"
+     width={200}
+     height={200}
+     placeholder="blur"
+     priority
+   />
    ```
 
-5. **Troubleshooting**:
-   - Ensure the `GA_MEASUREMENT_ID` is correctly set in your environment variables.
-   - Verify that the `Analytics` component is correctly integrated into your application.
-   - Check the network requests in your browser's developer tools to ensure events are being sent to GA.
+2. **Font Optimization**:
+   ```typescript
+   // In app/layout.tsx
+   import { GeistSans } from 'geist/font/sans'
+   import { GeistMono } from 'geist/font/mono'
+   
+   export default function RootLayout({
+     children,
+   }: {
+     children: React.ReactNode
+   }) {
+     return (
+       <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+         {children}
+       </html>
+     )
+   }
+   ```
 
-For more detailed instructions, refer to the [Google Analytics documentation](https://support.google.com/analytics/answer/1008015?hl=en) and ensure your setup aligns with the latest GA practices.
+3. **SEO Optimization**:
+   ```typescript
+   // In app/layout.tsx
+   export const metadata: Metadata = {
+     title: {
+       template: '%s | Resume Builder',
+       default: 'Resume Builder',
+     },
+     description: 'Create and share your professional resume',
+     openGraph: {
+       type: 'website',
+       locale: 'en_US',
+       url: 'https://your-domain.com',
+       siteName: 'Resume Builder',
+     },
+   }
+   ```
 
-## Learn More
+### Common Issues and Solutions
 
-To learn more about Next.js, take a look at the following resources:
+1. **Type Errors with Analytics**:
+   ```typescript
+   // Add types/gtag.d.ts
+   interface Window {
+     gtag: (
+       command: string,
+       targetId: string,
+       config?: Record<string, any>
+     ) => void
+   }
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Build Optimization Issues**:
+   ```json
+   // next.config.js
+   /** @type {import('next').NextConfig} */
+   const nextConfig = {
+     output: 'standalone',
+     images: {
+       unoptimized: process.env.NODE_ENV === 'development',
+     },
+     experimental: {
+       optimizeCss: true,
+     },
+   }
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Environment Variables in Production**:
+   - Vercel: Add through dashboard
+   - AWS Amplify: Add through Environment Variables settings
+   - Docker: Add through docker-compose or Dockerfile
+
+### Security Best Practices
+
+1. **Content Security Policy**:
+   ```typescript
+   // next.config.js
+   const securityHeaders = [
+     {
+       key: 'Content-Security-Policy',
+       value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+     }
+   ]
+   ```
+
+2. **API Rate Limiting**:
+   ```typescript
+   // pages/api/_middleware.ts
+   import rateLimit from 'express-rate-limit'
+   
+   const limiter = rateLimit({
+     windowMs: 15 * 60 * 1000, // 15 minutes
+     max: 100 // limit each IP to 100 requests per windowMs
+   })
+   ```
+
+### Contributing Guidelines
+
+1. **Code Style**:
+   - Use ESLint and Prettier configurations provided
+   - Follow TypeScript strict mode guidelines
+   - Use meaningful variable and function names
+
+2. **Pull Request Process**:
+   - Create feature branch from `develop`
+   - Add tests for new features
+   - Update documentation
+   - Request review from maintainers
+
+3. **Commit Messages**:
+   ```bash
+   feat: add share button component
+   fix: resolve analytics tracking issue
+   docs: update deployment instructions
+   ```
+
+For more detailed information about specific features or configurations, please check our [Wiki](link-to-wiki) or open an issue.
