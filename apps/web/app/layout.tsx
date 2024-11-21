@@ -21,37 +21,37 @@ type RootLayoutProps = {
 
 export const metadata: Metadata = {
   metadataBase: getDomainUrl(),
-  title: "Michael V. Mikula | Lead Software Engineer & Salesforce Technical Leader",
-  description: "Lead Software Engineer and Salesforce Technical Architect with expertise in full-stack engineering, managed packages, DevOps, and generative AI development. 36x LinkedIn recommended professional.",
+  title: "Your Name | Your Title",
+  description: "Your description here.",
   keywords: [
-    'Software Engineer',
-    'Salesforce Technical Leader',
-    'Full Stack Developer',
-    'Technical Architect',
-    'DevOps Engineer',
-    'AI Developer',
-    'San Francisco',
-    'Remote'
+    'Keyword1',
+    'Keyword2',
+    'Keyword3',
+    'Keyword4',
+    'Keyword5',
+    'Keyword6',
+    'Keyword7',
+    'Keyword8'
   ],
-  authors: [{ name: "Michael V. Mikula" }],
+  authors: [{ name: "Your Name" }],
   openGraph: {
     type: 'profile',
-    title: 'Michael V. Mikula - Lead Software Engineer & Salesforce Technical Leader',
-    description: "Lead Software Engineer and Salesforce Technical Architect with expertise in full-stack engineering, managed packages, DevOps, and generative AI development.",
+    title: 'Your Name - Your Title',
+    description: "Your description here.",
     images: [{
       url: createUrl('/previews/linkedin-preview.png'),
       width: 1200,
       height: 627,
-      alt: 'Michael V. Mikula - Lead Software Engineer & Salesforce Technical Leader'
+      alt: 'Your Name - Your Title'
     }],
-    siteName: "Michael V. Mikula Resume",
+    siteName: "Your Site Name",
     locale: 'en_US',
     url: getDomainString(),
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Michael V. Mikula - Lead Software Engineer',
-    description: "Lead Software Engineer and Salesforce Technical Architect with expertise in full-stack engineering, managed packages, DevOps, and generative AI development.",
+    title: 'Your Name - Your Title',
+    description: "Your description here.",
     images: [createUrl('/previews/linkedin-preview.png')],
   },
   robots: {

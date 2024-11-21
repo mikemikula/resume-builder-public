@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+import { SITE_CONFIG } from '@/lib/constants'
 
 export default function PrivacyPolicy() {
   return (
@@ -67,7 +68,7 @@ export default function PrivacyPolicy() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-text-primary">Contact</h2>
           <p>For privacy-related inquiries, please contact:</p>
-          <p>Email: mikemikula@gmail.com</p>
+          <p>Email: {SITE_CONFIG.email}</p>
         </section>
 
         <section className="space-y-4">

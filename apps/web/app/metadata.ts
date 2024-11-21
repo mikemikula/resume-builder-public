@@ -7,12 +7,13 @@ export const metadata = {
   description: summary.text,
   keywords: [
     'Software Engineer',
-    'Salesforce Technical Leader',
     'Full Stack Developer',
+    'Technical Leader',
+    'Solution Architect',
+    'DevOps Engineer',
+    'Cloud Architecture',
     'AI Integration',
-    'DevOps',
-    'Technical Leadership',
-    'Solution Architecture'
+    'Technical Leadership'
   ],
   authors: [{ name: personal.name }],
   creator: personal.name,
