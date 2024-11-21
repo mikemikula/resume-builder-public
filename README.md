@@ -1,6 +1,6 @@
-Note -> This app was completely build using [https](https://www.cursor.com/) composer with Anthropic's Claude 3.5-sonnet and GPT-4o for documention generation.  I expect there to be some imperfections, but happy to review pr's to make it better!
+Note -> This app was completely build using [Cursor](https://www.cursor.com/) composer with Anthropic's Claude 3.5-sonnet and GPT-4o for documention generation.  I expect there to be some imperfections, but happy to review pr's to make it better!
 
-Live Site Example:  [https](https://www.mikemikula.com/)
+Live Site Example:  [mikemikula.com](https://www.mikemikula.com/)
 
 # Resume Builder App
 
