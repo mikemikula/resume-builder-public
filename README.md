@@ -1,8 +1,14 @@
+Note -> This app was completely build using [https](https://www.cursor.com/) composer with Anthropic's Claude 3.5-sonnet and GPT-4o for documention generation.  I expect there to be some imperfections, but happy to review pr's to make it better!
+
+Live Site Example:  [https](https://www.mikemikula.com/)
+
 # Resume Builder App
 
 A modern, customizable resume builder application built with Next.js and TypeScript. Create, edit, and share your professional resume with a beautiful, responsive design.
 
-![Resume Builder Preview](./docs/preview.png)
+https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
+
+
 
 ## Features
 
