@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
 
 ## Features
 
-- 🎨 Modern, responsive design with dark/light mode
+- 🎨 Modern, responsive design with dark theme
 - 📱 Mobile-friendly interface
 - 🖨️ Print-optimized layout
 - 📊 Google Analytics integration
