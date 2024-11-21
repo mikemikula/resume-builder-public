@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ShareIcon, CheckIcon } from '@heroicons/react/24/outline'
+import { SITE_CONFIG } from '@/lib/constants';
 
 export default function ShareButton() {
   const [copied, setCopied] = useState(false)
@@ -11,7 +12,7 @@ export default function ShareButton() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Michael V. Mikula - Resume',
+          title: `${SITE_CONFIG.name} - Resume`, // Use ':' instead of '='
           url: window.location.href
         })
       } catch (err) {

@@ -10,6 +10,7 @@ import {
   MoonIcon
 } from '@heroicons/react/24/outline'
 import { Theme, getInitialTheme, applyTheme } from '@/lib'
+import { SITE_CONFIG } from '@/lib/constants';
 
 export default function ActionButtons() {
   const [theme, setTheme] = useState<Theme>('dark')
@@ -27,7 +28,7 @@ export default function ActionButtons() {
   const handleShare = async () => {
     try {
       await navigator.share({
-        title: 'Michael Mikula - Resume',
+        title: `${SITE_CONFIG.name} - Resume`,
         url: window.location.href
       })
     } catch (err) {

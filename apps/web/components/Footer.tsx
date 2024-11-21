@@ -1,12 +1,14 @@
 'use client'
 
+import { SITE_CONFIG } from '@/lib/constants';
+
 export default function Footer() {
   return (
     <footer className="py-8 border-t border-border mb-24">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-text-secondary">
-            © {new Date().getFullYear()} Michael V. Mikula. All rights reserved.
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <nav>
             <ul className="flex items-center gap-6">

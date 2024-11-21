@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
       <html>
         <head>
           <title>Preview Debug</title>
-          <meta property="og:title" content="Michael V. Mikula - Lead Software Engineer" />
+          <meta property="og:title" content="Your Name- Lead Software Engineer" />
           <meta property="og:image" content="http://localhost:3001/previews/linkedin-preview.png" />
         </head>
         <body>

@@ -1,5 +1,6 @@
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
+import { SITE_CONFIG } from '@/lib/constants';
 
 export const generatePDF = async () => {
   // Hide elements that shouldn't be in the PDF
@@ -180,7 +181,7 @@ export const generatePDF = async () => {
     )
 
     // Save PDF
-    pdf.save('michael-mikula-resume.pdf')
+    pdf.save(`${SITE_CONFIG.name}-resume.pdf`)
   } catch (error) {
     console.error('Error generating PDF:', error)
   } finally {
