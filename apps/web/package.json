@@ -1,0 +1,45 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "verify": "tsc --noEmit --incremental false --project tsconfig.verify.json",
+    "prebuild": "tsx scripts/verify-production-assets.ts && pnpm verify",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "serve .next",
+    "lint": "eslint --cache --ext .ts,.tsx --config .eslintrc.js .",
+    "type-check": "tsc --noEmit",
+    "update-imports": "NODE_ENV=development ts-node --project tsconfig.scripts.json -T scripts/update-imports.ts"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.1.1",
+    "@vercel/og": "^0.6.3",
+    "critters": "^0.0.20",
+    "framer-motion": "^11.0.3",
+    "geist": "^1.2.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "next": "^14.2.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/html2canvas": "^1.0.0",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.2.52",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.2.10",
+    "fast-glob": "^3.3.2",
+    "postcss": "^8.4.33",
+    "serve": "^14.2.4",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.3.3"
+  }
+}

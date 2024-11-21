@@ -1,0 +1,42 @@
+@media print {
+  @page {
+    margin: 1cm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-title::after {
+    background: #4f46e5 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #4f46e5 !important;
+  }
+
+  .badge {
+    border: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    color: #1e293b !important;
+  }
+} 

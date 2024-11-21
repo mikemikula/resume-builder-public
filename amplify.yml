@@ -1,0 +1,33 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm
+        - pnpm install --no-frozen-lockfile --filter=!./tools/**
+    build:
+      commands:
+        - cd apps/web
+        - pnpm build
+  artifacts:
+    baseDirectory: apps/web/out
+    files:
+      - '**/*'
+      - 'public/**/*'
+      - 'previews/**/*'
+      - '../server/**/*'
+      - '../standalone/**/*'
+      - '../public/**/*'
+      - '../package.json'
+      - '../next.config.js'
+      - '../.next/BUILD_ID'
+      - '../.next/build-manifest.json'
+      - '../.next/prerender-manifest.json'
+      - '../.next/routes-manifest.json'
+      - '../.next/required-server-files.json'
+  cache:
+    paths:
+      - node_modules/**/*
+      - apps/web/node_modules/**/*
+      - apps/web/.next/cache/**/*
+      - .pnpm-store/**/*

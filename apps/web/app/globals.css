@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --surface: #f3f4f6;
+    --surface-hover: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --primary: #3b82f6;
+    --accent: #818cf8;
+    --border: #e5e7eb;
+  }
+
+  .dark {
+    --background: #030712;
+    --surface: #111827;
+    --surface-hover: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --primary: #3b82f6;
+    --accent: #818cf8;
+    --border: #1f2937;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  /* Improve heading typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+
+  h1 { @apply text-4xl font-semibold; }
+  h2 { @apply text-3xl font-semibold; }
+  h3 { @apply text-2xl font-medium; }
+  h4 { @apply text-xl font-medium; }
+  h5 { @apply text-lg font-medium; }
+  h6 { @apply text-base font-medium; }
+
+  /* Improve paragraph readability */
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Better link styles */
+  a {
+    @apply text-primary hover:text-accent transition-colors;
+  }
+
+  section {
+    @apply py-2;
+    margin-bottom: 1rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @apply mb-3;
+  }
+
+  /* Add consistent spacing for all major components */
+  .section-content {
+    @apply space-y-3;
+  }
+} 

@@ -1,0 +1,32 @@
+{
+  "name": "resume-site",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "pnpm --filter web exec serve -- out",
+    "lint": "turbo run lint",
+    "clean:modules": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules && rm -rf tools/*/node_modules",
+    "clean:builds": "rm -rf .turbo && rm -rf apps/*/.next && rm -rf packages/*/dist && rm -rf tools/*/dist",
+    "clean:locks": "rm -rf pnpm-lock.yaml",
+    "clean": "pnpm clean:modules && pnpm clean:builds && pnpm clean:locks",
+    "clean:install": "pnpm clean && echo 'Installing dependencies...' && pnpm install",
+    "prebuild": "pnpm --filter web exec tsx -- scripts/verify-production-assets.ts",
+    "debug:preview": "pnpm --filter web exec tsx -- scripts/debug-preview.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "turbo": "^2.3.0",
+    "tsx": "^4.7.1"
+  },
+  "packageManager": "pnpm@8.9.0"
+}

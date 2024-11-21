@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+    "NEXT_PUBLIC_DOMAIN",
+    "NEXT_PUBLIC_ENV"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["out/**"],
+      "env": [
+        "NEXT_PUBLIC_DOMAIN",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+        "NEXT_PUBLIC_ENV"
+      ],
+      "inputs": ["!tools/**"]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {},
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+} 
