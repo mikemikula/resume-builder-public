@@ -62,6 +62,7 @@ https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
 3. **Start Development Server**:
    ```bash
    pnpm dev
+   Open Chrome:  http://localhost:3000/
    ```
 
 ### Customization
