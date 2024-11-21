@@ -4,10 +4,11 @@ Live Site Example:  [mikemikula.com](https://www.mikemikula.com/)
 
 # Resume Builder App
 
-A modern, customizable resume builder application built with Next.js and TypeScript. Create, edit, and share your professional resume with a beautiful, responsive design.
+A modern, customizable resume builder application built with Next.js, TypeScript and Google Analytics integration. Create, edit, and share your professional resume with a beautiful, responsive design.
 
+# Application Demo
 https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
-
+# Google Analytics
 ![image](https://github.com/user-attachments/assets/a12afad7-9052-4a02-9202-010e2dea49b9)
 
 
@@ -102,81 +103,12 @@ https://github.com/user-attachments/assets/8fe0e587-a0a2-45a2-8b81-8389c37b5998
 ### Deployment
 
 #### AWS Amplify
-Follow the AWS deployment steps in the AWS section above.
-
-
-### Analytics Implementation
-
-The app uses Google Analytics 4 with custom event tracking:
-```typescript
-// Example event tracking
-const trackEvent = {
-  action: 'page_view',
-  category: 'engagement',
-  label: 'resume_view'
-}
-```
-
-## Performance Optimization
-
-- Implements image optimization
-- Uses Next.js static generation
-- Employs proper code splitting
-- Optimizes fonts with `next/font`
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-6. Share a video and details on what's changed!
-
-### Development Guidelines
-
-- Follow the established code style
-- Add proper TypeScript types
-- Write tests for new features
-- Update documentation as needed
-
-## Troubleshooting
-
-Common issues and solutions:
-
-1. **Build Errors**:
-   ```bash
-   # Clear cache and reinstall dependencies
-   pnpm clean
-   pnpm install
-   ```
-
-2. **Type Errors**:
-   - Ensure TypeScript version matches project requirements
-   - Run `pnpm type-check` to verify types
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Next.js team for the amazing framework
-- Tailwind CSS for the utility-first CSS framework
-- The open-source community for inspiration and tools
-
-## Support
-
-For support, email open an issue or pr in the repository.
-
-## Detailed Setup Guides
-
-### AWS Amplify Deployment Guide
+AWS deployment steps.
 
 1. **Prerequisites**:
-   - AWS Account
-   - AWS CLI installed and configured
-   - Amplify CLI installed (`npm install -g @aws-amplify/cli`)
+    - AWS Account
+    - AWS CLI installed and configured
+    - Amplify CLI installed (`npm install -g @aws-amplify/cli`)
 
 2. **Initialize Amplify**:
    ```bash
@@ -209,6 +141,51 @@ For support, email open an issue or pr in the repository.
    ```bash
    amplify push
    ```
+
+### Analytics Implementation
+
+The app uses Google Analytics 4 with custom event tracking:
+```typescript
+// Example event tracking
+const trackEvent = {
+  action: 'page_view',
+  category: 'engagement',
+  label: 'resume_view'
+}
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+6. Share a video and details on what's changed!
+
+### Development Guidelines
+
+- Follow the established code style
+- Add proper TypeScript types
+- Update documentation as needed
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. **Build Errors**:
+   ```bash
+   # Clear cache and reinstall dependencies
+   pnpm clean
+   pnpm install
+   ```
+
+2. **Type Errors**:
+   - Ensure TypeScript version matches project requirements
+   - Run `pnpm type-check` to verify types
+
+## Detailed Setup Guides
+
 
 ### Google Analytics Implementation
 
@@ -402,7 +379,7 @@ For support, email open an issue or pr in the repository.
    ```
 
 2. **Build Optimization Issues**:
-   ```json
+   ```typescript
    // next.config.js
    /** @type {import('next').NextConfig} */
    const nextConfig = {
@@ -421,48 +398,16 @@ For support, email open an issue or pr in the repository.
    - AWS Amplify: Add through Environment Variables settings
    - Docker: Add through docker-compose or Dockerfile
 
-### Security Best Practices
+## License
 
-1. **Content Security Policy**:
-   ```typescript
-   // next.config.js
-   const securityHeaders = [
-     {
-       key: 'Content-Security-Policy',
-       value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
-     }
-   ]
-   ```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-2. **API Rate Limiting**:
-   ```typescript
-   // pages/api/_middleware.ts
-   import rateLimit from 'express-rate-limit'
-   
-   const limiter = rateLimit({
-     windowMs: 15 * 60 * 1000, // 15 minutes
-     max: 100 // limit each IP to 100 requests per windowMs
-   })
-   ```
+## Acknowledgments
 
-### Contributing Guidelines
+- Next.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
+- The open-source community for inspiration and tools
 
-1. **Code Style**:
-   - Use ESLint and Prettier configurations provided
-   - Follow TypeScript strict mode guidelines
-   - Use meaningful variable and function names
+## Support
 
-2. **Pull Request Process**:
-   - Create feature branch from `develop`
-   - Add tests for new features
-   - Update documentation
-   - Request review from maintainers
-
-3. **Commit Messages**:
-   ```bash
-   feat: add share button component
-   fix: resolve analytics tracking issue
-   docs: update deployment instructions
-   ```
-
-For more detailed information about specific features or configurations, please check our [Wiki](link-to-wiki) or open an issue.
+For support, open an issue or pr in the repository.
